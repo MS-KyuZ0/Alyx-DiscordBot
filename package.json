@@ -2,11 +2,12 @@
   "name": "alyx-discordbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node dist/index"
+    "dev": "tsc && node dist/main",
+    "start": "node dist/main"
   },
   "keywords": [],
   "author": "",
