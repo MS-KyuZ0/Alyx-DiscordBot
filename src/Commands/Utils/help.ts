@@ -5,11 +5,12 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 module.exports = {
-    data: new SlashCommandBuilder().setName('help').setDescription('Show all command in this bot.'),
+    data: new SlashCommandBuilder()
+    .setName('help')
+    .setDescription('Show all command in this bot.'),
     async execute(interaction: any) {
         const botName = interaction.client.user.username;
         const botAvatarUrl = interaction.client.user.displayAvatarURL();
-        let commandLists = [];
         let categoryIcon
 
         const isEmbed = new EmbedBuilder()
