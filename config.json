@@ -1,6 +1,5 @@
 {
-    "defaultPrefix":".",
-    
+    "defaultPrefix": ".",
     "colorPallets": {
         "primary": "#1a1a1e"
     }
