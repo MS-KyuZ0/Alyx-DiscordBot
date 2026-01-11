@@ -33,7 +33,11 @@ const commandHandler = (DiscordBot: any) => {
             
             const isData = await rest.put(Routes.applicationCommands('1458537924139159704'), { body: isCommands }) as unknown[];
 
+<<<<<<< HEAD
             console.log(`[System Command] Successfully reloaded ${isData.length} application (/) commands.`);
+=======
+            console.log(`Successfully reloaded ${isData.length} application (/) commands.`);
+>>>>>>> 5a1d6811bc156388e1ad5a68cd0e6a1b2604f12d
         }catch(err){
             console.error(err);
         }
