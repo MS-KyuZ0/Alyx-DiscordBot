@@ -1,5 +1,6 @@
 require("dotenv").config();
 import { REST, Routes } from 'discord.js';
+import { clientID } from '../../config.json'
 import * as fs from 'fs';
 import * as path from 'node:path';
 
@@ -30,11 +31,11 @@ const commandHandler = (DiscordBot: any) => {
     (async () => {
         try {
             console.log(`[System Command] Started refreshing ${isCommands.length} application (/) commands.`);
-            
-            const isData = await rest.put(Routes.applicationCommands('1458537924139159704'), { body: isCommands }) as unknown[];
+
+            const isData = await rest.put(Routes.applicationCommands(clientID), { body: isCommands }) as unknown[];
 
             console.log(`[System Command] Successfully reloaded ${isData.length} application (/) commands.`);
-        }catch(err){
+        } catch (err) {
             console.error(err);
         }
     })()
