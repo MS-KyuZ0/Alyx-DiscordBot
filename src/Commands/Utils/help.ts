@@ -29,11 +29,11 @@ module.exports = {
 
             const commandNames = commandFiles.map(f => `\` ${f.replace('.js', '')} \``);
 
-            categoryIcon = CATEGORY_ICONS[category]
+            categoryIcon = CATEGORY_ICONS[category];
             
             isEmbed.addFields({
                 name: `${categoryIcon} ${category}`,
-                value: commandNames.join('\n'),
+                value: `${commandNames.join('\n')}`,
                 inline: true
             })
         }
