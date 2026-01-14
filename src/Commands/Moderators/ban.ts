@@ -1,4 +1,11 @@
-import { SlashCommandBuilder, PermissionFlagsBits, ModalBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, LabelBuilder } from 'discord.js';
+import {
+    SlashCommandBuilder,
+    PermissionFlagsBits,
+    ModalBuilder,
+    StringSelectMenuBuilder,
+    StringSelectMenuOptionBuilder,
+    LabelBuilder
+} from 'discord.js';
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -8,7 +15,7 @@ module.exports = {
     async execute(interaction: any) {
         const isModal = new ModalBuilder()
             .setCustomId('userBan')
-            .setTitle('Member Name');
+            .setTitle('Banned Member');
 
         const UserBanInput = new StringSelectMenuBuilder()
             .setCustomId('userbanned')

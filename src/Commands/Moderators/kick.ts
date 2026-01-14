@@ -8,9 +8,9 @@ module.exports = {
     async execute(interaction: any) {
         const isModal = new ModalBuilder()
             .setCustomId('userKick')
-            .setTitle('Member Name');
+            .setTitle('Kick Member');
 
-        const UserBanInput = new StringSelectMenuBuilder()
+        const UserKickInput = new StringSelectMenuBuilder()
             .setCustomId('userkicked')
             .setRequired(true);
 
@@ -20,20 +20,18 @@ module.exports = {
             const memberId = member.user.id
             const memberUsername = member.user.username
 
-            UserBanInput.addOptions(
+            UserKickInput.addOptions(
                 new StringSelectMenuOptionBuilder()
                     .setLabel(`${memberUsername}`)
                     .setValue(memberId)
             )
         });
 
-        const banLabel = new LabelBuilder()
-            .setLabel('Select member to banned:')
-            .setStringSelectMenuComponent(UserBanInput);
+        const kickLabel = new LabelBuilder()
+            .setLabel('Select member to kick out:')
+            .setStringSelectMenuComponent(UserKickInput);
 
-        isModal.addLabelComponents(banLabel);
-
-        // await interaction.reply({content: 'test'});
+        isModal.addLabelComponents(kickLabel);
         await interaction.showModal(isModal);
     },
 };
